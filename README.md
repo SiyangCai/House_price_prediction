@@ -5,8 +5,8 @@
 
 ## Data 
 This dataset includes following informations:
-* ID. Unique for each sold.
-* Date. 
-* Price
-* Bedrooms. Number of bedrooms
-* Bathrooms. Number of bathrooms, where 0.5 acoounts for a room with toilet but no shower, 0.25 accounts for a room with either toilet, sink, shower or bathtub.
+* `id`. Unique for each sold.
+* `date`. 
+* `price`.
+* `bedrooms`. Number of bedrooms.
+* `bathrooms`. Number of bathrooms, where 0.5 acoounts for a room with toilet but no shower, 0.25 accounts for a room with either toilet, sink, shower or bathtub.
