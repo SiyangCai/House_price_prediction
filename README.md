@@ -62,9 +62,13 @@ These are the models I will be using to search for the best fit.
 * XGBoost.
 * Also grid search will be an option to find the best combinations of hyperparameter if necessary. 
 
-A cross validation will be performed to avoid random effect in splitting the data. The cross validataion will be perform on the pipeline of sickit-learn preprocessing and ML models.
+A cross validation with 5 folds will be performed to avoid random effect in splitting the data. The cross validataion will be perform on the pipeline of sickit-learn preprocessing and ML models.
 
 ## Results
-The results of these models can be review by many metrics. Here we use `R2` as this is a regression problem. Cross validation scoring with negative mean absolute/squared error are also checked and are consistent with the following conclusion:
+The results of these models can be review by many metrics. Here we use $R^2$ as this is a regression problem. Cross validation scoring with negative mean absolute/squared error are also checked and are consistent with the following conclusion:
 * Linear regression: seems bad, there will be one fold with extremely high error (`R2` extremely close to 0), which bring down the mean of 5 cross validation scores.
-* Lasso regression: is stable, $R^2 = 0.9097$ after searching with best parameters.
+* Lasso regression: stable, $R^2 = 0.9097$ after searching with best parameters.
+* Random forest: $R^2 = 0.9944$ with pruing to avoid overfitting.
+* XGBoost:  $R^2 = 0.9952$.
+
+In summary, random forest and XGBoost are the two best models with high scoring in predictions of house prices using this dataset. Lasso regression is also stable and well-performed.
