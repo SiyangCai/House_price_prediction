@@ -6,7 +6,7 @@ This dataset contains house sale prices for King County in US, which includes Se
 Our Goal is to build Machine Learning models to predict house prices using this dataset. 
 
 ## Data 
-This dataset includes following informations:
+This dataset (21623 rows) includes following informations:
 * `id`. Unique for each sold.
 * `date`. 
 * `price`.
@@ -43,7 +43,12 @@ Here I also noticed that there are houses with extreme numbers of bedrooms but l
 <script type='text/javascript'>                    var divElement = document.getElementById('viz1670502153616');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1120px';vizElement.style.height='887px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1120px';vizElement.style.height='887px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
 ## Data Cleaning/Feature Engineering
-
+From the last section, I have already noticed some weird numbers in bedrooms and bathrooms. So a quick search in the data frame can tell us about some interesting information about houses that:
+* There are 3 houses have at least 1 bedroom (all of them actually has only one bedroom) but no bathrooms.
+* There are 6 houses have no bedrooms but at least 1 bathrooms.
+* There are 7 houses have no bedroooms or bathrooms.
+* There are 1 house have 11 bedrooms (built in 1918) and 1 house have 33 bedrooms (built in 1947), which their prices, living squarefoot, do not match with the reality now in 2022, given the assumption that those information are correct.
+  
 ## ML Model Building
 
 ## Results
