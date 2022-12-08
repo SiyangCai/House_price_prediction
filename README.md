@@ -66,4 +66,5 @@ A cross validation will be performed to avoid random effect in splitting the dat
 
 ## Results
 The results of these models can be review by many metrics. Here we use `R2` as this is a regression problem. Cross validation scoring with negative mean absolute/squared error are also checked and are consistent with the following conclusion:
-* Linear regression seems bad, there will be one fold with extremely high 
+* Linear regression: seems bad, there will be one fold with extremely high error (`R2` extremely close to 0), which bring down the mean of 5 cross validation scores.
+* Lasso regression: is stable, $R^2 = 0.9097$ after searching with best parameters.
