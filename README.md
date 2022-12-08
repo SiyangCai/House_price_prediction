@@ -53,6 +53,17 @@ As a results, I simply removed all 18 rows in the dataset as outliers. Furthermo
  * replace `yr_renovated` by a binary feature `renovated` to represent whether this house is renovated after built.
  * calculate `avg_price_per_sqft`, which represent the price per living squarefoot.
  * calculate `sqft_living_percent`, which represent the percentage (in decimal) of the living squarefoot in the total actual land space.
+
 ## ML Model Building
+These are the models I will be using to search for the best fit.
+* Linear regression is a good start in price-prediction problem.
+* Lasso regression can be an improvement.
+* Random Forest.
+* XGBoost.
+* Also grid search will be an option to find the best combinations of hyperparameter if necessary. 
+
+A cross validation will be performed to avoid random effect in splitting the data. The cross validataion will be perform on the pipeline of sickit-learn preprocessing and ML models.
 
 ## Results
+The results of these models can be review by many metrics. Here we use `R2` as this is a regression problem. Cross validation scoring with negative mean absolute/squared error are also checked and are consistent with the following conclusion:
+* Linear regression seems bad, there will be one fold with extremely high 
