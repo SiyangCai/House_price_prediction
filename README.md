@@ -44,11 +44,15 @@ Here I also noticed that there are houses with extreme numbers of bedrooms but l
 
 ## Data Cleaning/Feature Engineering
 First of all, the ID and date of purchases will not be included in the model as both of them might be irrelavent to the topic. Then from the last section, I have already noticed some weird numbers in bedrooms and bathrooms. So a quick search in the data frame can tell us about some interesting information about houses that:
-  * There are 3 houses have at least 1 bedroom (all of them actually have only one bedroom) but no bathrooms.
-  * There are 6 houses have no bedrooms but at least 1 bathrooms.
-  * There are 7 houses have no bedroooms or bathrooms.
-  * There are 1 house have 11 bedrooms (built in 1918) and 1 house have 33 bedrooms (built in 1947), which their prices, living squarefoot, do not match with the reality now in 2022, given the assumption that those information are correct.
-As a results, I simply removed all 18 rows in the dataset as outliers.
+  * there are 3 houses have at least 1 bedroom (all of them actually have only one bedroom) but no bathrooms.
+  * there are 6 houses have no bedrooms but at least 1 bathrooms.
+  * there are 7 houses have no bedroooms or bathrooms.
+  * there are 1 house have 11 bedrooms (built in 1918) and 1 house have 33 bedrooms (built in 1947), which their prices, living squarefoot, do not match with the reality now in 2022, given the assumption that those information are correct.
+
+As a results, I simply removed all 18 rows in the dataset as outliers. Furthermore, I add three new features that could be crucial to imporve our model in predicting the price of a house:
+ * replace `yr_renovated` by a binary feature `renovated` to represent whether this house is renovated after built.
+ * calculate `avg_price_per_sqft`, which represent the price per living squarefoot.
+ * calculate `sqft_living_percent`, which represent the percentage (in decimal) of the living squarefoot in the total actual land space.
 ## ML Model Building
 
 ## Results
