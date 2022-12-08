@@ -49,7 +49,7 @@ First of all, the ID and date of purchases will not be included in the model as 
   * there are 7 houses have no bedroooms or bathrooms.
   * there are 1 house have 11 bedrooms (built in 1918) and 1 house have 33 bedrooms (built in 1947), which their prices, living squarefoot, do not match with the reality now in 2022, given the assumption that those information are correct.
 
-As a results, I simply removed all 18 rows in the dataset as outliers. Furthermore, I add three new features that could be crucial to imporve our model in predicting the price of a house:
+As a results, I simply removed all 18 rows in the dataset as outliers. Furthermore, I create three new features that could be crucial to imporve our model in predicting the price of a house:
  * replace `yr_renovated` by a binary feature `renovated` to represent whether this house is renovated after built.
  * calculate `avg_price_per_sqft`, which represent the price per living squarefoot.
  * calculate `sqft_living_percent`, which represent the percentage (in decimal) of the living squarefoot in the total actual land space.
